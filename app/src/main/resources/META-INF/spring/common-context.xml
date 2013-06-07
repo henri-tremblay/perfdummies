@@ -17,4 +17,6 @@
 	
 	<data:repositories base-package="com.octo.red.happystore.dao" />
 
+    <context:mbean-export/>
+
 </beans>
