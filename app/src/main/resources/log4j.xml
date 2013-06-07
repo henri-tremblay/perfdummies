@@ -31,12 +31,7 @@
 	<logger name="org.springframework.web">
 		<level value="warn" />
 	</logger>
-	
-	<!-- Application Loggers -->
-	<logger name="com.octo.rnd">
-		<level value="warn" />
-	</logger>
-	
+
 	<!-- 3rdparty Loggers -->
 	
 	<logger name="org.hibernate.SQL">
