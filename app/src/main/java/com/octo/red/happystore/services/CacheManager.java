@@ -80,7 +80,6 @@ public class CacheManager {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println(out.toByteArray().length);
         return out.toByteArray();
     }
 
