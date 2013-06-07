@@ -9,13 +9,13 @@ class FullSimulation extends Simulation {
   val url = "http://" + server + ":" + port
   // Test params (in seconds)
   val rampUp = 10;
-  val duration = 30
+  val duration = rampUp * 4
   val thinkRatio = 1
   // Users per scenario
-  val txUsers = 1
-  val ivtUsers = 1
-  val toUsers = 1
-
+  val txUsers = 80
+  val ivtUsers = 10
+  val toUsers = 10
+   
 	val httpConf = httpConfig
     .baseURL(url + "/happystore")
     .acceptHeader("application/json, text/plain, */*")
