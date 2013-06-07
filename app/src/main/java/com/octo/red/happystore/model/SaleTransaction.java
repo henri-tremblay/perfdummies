@@ -1,5 +1,6 @@
 package com.octo.red.happystore.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -9,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class SaleTransaction {
+public class SaleTransaction  implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

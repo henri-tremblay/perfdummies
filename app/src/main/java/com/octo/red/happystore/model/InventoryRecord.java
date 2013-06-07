@@ -1,6 +1,8 @@
 package com.octo.red.happystore.model;
 
-public class InventoryRecord {
+import java.io.Serializable;
+
+public class InventoryRecord  implements Serializable {
 	private String categoryLabel;
 	private Integer categoryId;
 	private String productLabel;

@@ -1,13 +1,14 @@
 package com.octo.red.happystore.model;
 
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import java.io.Serializable;
+import java.util.Set;
+
 @Entity
-public class Country {
+public class Country  implements Serializable {
 	@Id
 	private String alpha3Code;
 

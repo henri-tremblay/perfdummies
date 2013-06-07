@@ -1,5 +1,6 @@
 package com.octo.red.happystore.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
@@ -11,9 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 @Entity
-public class Product {
+public class Product implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,6 +50,10 @@ public class Product {
 	private Long previousBuyPrice;
 	private Boolean isActive;
 	private String eanCode;
+
+    @Transient
+    private byte[] picture = new byte[4096];
+
 	@OneToOne
 	private Product parentProduct;
 	@OneToMany(mappedBy = "parentProduct")
@@ -305,4 +311,12 @@ public class Product {
 		childProduct.parentProduct = this;
 		this.childProducts.add(childProduct);
 	}
+
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
+    }
 }
