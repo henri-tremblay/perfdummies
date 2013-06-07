@@ -1,5 +1,13 @@
 package com.octo.red.happystore.services;
 
+import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.octo.red.happystore.dao.ProductRepository;
 import com.octo.red.happystore.dao.SaleOperationRepository;
 import com.octo.red.happystore.dao.SaleTransactionRepository;
@@ -11,13 +19,6 @@ import com.octo.red.happystore.model.SaleTransaction;
 import com.octo.red.happystore.model.Stock;
 import com.octo.red.happystore.model.TotalVo;
 import com.octo.red.happystore.model.VAT;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Date;
 
 @Service
 public class TransactionService {
@@ -40,7 +41,7 @@ public class TransactionService {
 	CurrencyConverter currencyConverter;
 	
 	@Transactional
-	public SaleOperation buy(String countryCode, long productId, long storeId, Long txId) {
+	public synchronized SaleOperation buy(String countryCode, long productId, long storeId, Long txId) {
 		if(countryCode == null || countryCode.length()== 0) {
 			throw new IllegalArgumentException("countryCode must not be null");
 		}
