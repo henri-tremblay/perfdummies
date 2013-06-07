@@ -18,7 +18,10 @@
 </ul>
 </p>
 <p>
-    To connect to the in-memory database use the <a href="http://localhost:8080/happystore/console">H2 Console</a> with <i>jdbc:h2:mem:rundb</i> with the user <b>sa</b> and no password
+    To connect to the in-memory database use the <a href="http://localhost:8080/happystore/console">H2 Console</a> with <i>jdbc:h2:mem:rundb</i> with the user <b>sa</b> and no password.
+</p>
+<p>
+    You can look at the internal cache system and datasource through MBeans named respectively <i>bean:name=cacheManager</i> and <i>bean:name=dataSource</i>.
 </p>
 </body>
 </html>
