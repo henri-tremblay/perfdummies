@@ -101,7 +101,7 @@ class FullSimulation extends Simulation {
 			.queryParam("groupId", "${groupId}")
 			.headers(headers)
       .check(status.is(200))
-      .check(regex(""".*"totalAmount".*"""))
+      .check(regex(""".*\[.*\].*"""))
 		)
 		.pause(5 * thinkRatio, 10 * thinkRatio)
 	}
