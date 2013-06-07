@@ -14,7 +14,7 @@
         <property name="properties">
             <props>
                 <prop key="dataSource.driverClassName">org.h2.Driver</prop>
-                <prop key="dataSource.url">jdbc:h2:mem:rundb;LOCK_TIMEOUT=10000</prop>
+                <prop key="dataSource.url">jdbc:h2:mem:rundb</prop>
                 <prop key="dataSource.username">sa</prop>
                 <prop key="dataSource.password"></prop>
                 <prop key="dataSource.pool.maxIdle">10</prop>
