@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!--  
+		Le dialect specifie ici ne sera utilise que par hbm2ddl, 
+		Au runtime on utilisera le persistence.xml
+		-->
+		<property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        <mapping class="com.octo.red.happystore.model.CategoryFamily" />
+        <mapping class="com.octo.red.happystore.model.Country" />
+        <mapping class="com.octo.red.happystore.model.Product" />
+        <mapping class="com.octo.red.happystore.model.SaleOperation" />
+        <mapping class="com.octo.red.happystore.model.SaleTransaction" />
+        <mapping class="com.octo.red.happystore.model.Stock" />
+        <mapping class="com.octo.red.happystore.model.Store" />
+        <mapping class="com.octo.red.happystore.model.VAT" />
+  	</session-factory>
+</hibernate-configuration>
