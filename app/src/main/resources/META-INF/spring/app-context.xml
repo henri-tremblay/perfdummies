@@ -23,8 +23,8 @@
                 <prop key="dataSource.pool.validationQuery">select 1</prop>
                 <prop key="initialize-database.enabled">true</prop>
                 <prop key="dataSource.dialect">org.hibernate.dialect.H2Dialect</prop>
-                <prop key="schema.path">classpath:/db/h2/schema.sql</prop>
-                <prop key="init-data.path">classpath:/db/h2/test-data.sql</prop>
+                <prop key="schema.path">classpath:db/schema.sql</prop>
+                <prop key="init-data.path">classpath:db/test-data.sql</prop>
                 <prop key="showSql">false</prop>
             </props>
         </property>

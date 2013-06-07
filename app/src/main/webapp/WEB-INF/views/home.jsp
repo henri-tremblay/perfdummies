@@ -17,6 +17,8 @@
     <li><a href="turnover?groupId=1">/turnover?<b>groupId</b>=1</a></li>
 </ul>
 </p>
-<p> The time on the server is ${serverTime}.</p>
+<p>
+    To connect to the in-memory database use the <a href="http://localhost:8080/happystore/console">H2 Console</a> with <i>jdbc:h2:mem:rundb</i> with the user <b>sa</b> and no password
+</p>
 </body>
 </html>

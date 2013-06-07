@@ -12,12 +12,12 @@ class FullSimulation extends Simulation {
   val duration = 30
   val thinkRatio = 1
   // Users per scenario
-  val txUsers = 80
-  val ivtUsers = 10
-  val toUsers = 10
+  val txUsers = 1
+  val ivtUsers = 1
+  val toUsers = 1
 
 	val httpConf = httpConfig
-    .baseURL(url)
+    .baseURL(url + "/happystore")
     .acceptHeader("application/json, text/plain, */*")
     .acceptCharsetHeader("ISO-8859-1,utf-8;q=0.7,*;q=0.3")
     .acceptEncodingHeader("gzip,deflate,sdch")
