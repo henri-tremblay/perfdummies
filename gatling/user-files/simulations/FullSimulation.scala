@@ -9,7 +9,7 @@ class FullSimulation extends Simulation {
   val url = "http://" + server + ":" + port
   // Test params (in seconds)
   val rampUp = 10;
-  val duration = rampUp * 4
+  val duration = 60
   val thinkRatio = 1
   // Users per scenario
   val txUsers = 80
@@ -48,7 +48,7 @@ class FullSimulation extends Simulation {
 			.headers(headers)
 			.check(regex(""".*\{"txId":([0-9]*),.*""").exists.saveAs("transactionId"))
 		)
-		.pause(1 * thinkRatio, 2 * thinkRatio)
+		.pause(0 * thinkRatio, 1 * thinkRatio)
 		.doIf((s: Session) => {
 			val txS = s.getAttribute("transactionId"); 
 			txS match {  
@@ -68,7 +68,7 @@ class FullSimulation extends Simulation {
         .check(status.is(200), regex(""".*"txId".*"""))
 			)
 		}
-		.pause(2 * thinkRatio, 3 * thinkRatio)
+		.pause(1 * thinkRatio, 2 * thinkRatio)
 		.exec(
 			http("total")
 			.get("/total")
@@ -76,7 +76,7 @@ class FullSimulation extends Simulation {
 			.headers(headers)
       .check(status.is(200), regex(""".*"amount".*"""))
 		)
-		.pause(2 * thinkRatio, 3 * thinkRatio)
+		.pause(1 * thinkRatio, 1 * thinkRatio)
 	}
 	
 	val ivtScn = scenario("Inventory scenario")
@@ -89,7 +89,7 @@ class FullSimulation extends Simulation {
 			.headers(headers)
       .check(status.is(200), regex(""".*"quantity".*"""))
 		)
-		.pause(5 * thinkRatio, 10 * thinkRatio)
+		.pause(2 * thinkRatio, 4 * thinkRatio)
 	}
 	
 	val toScn = scenario("Turnover scenario")
@@ -103,7 +103,7 @@ class FullSimulation extends Simulation {
       .check(status.is(200))
       .check(regex(""".*\[.*\].*"""))
 		)
-		.pause(5 * thinkRatio, 10 * thinkRatio)
+		.pause(2 * thinkRatio, 4 * thinkRatio)
 	}
 
 	setUp(
