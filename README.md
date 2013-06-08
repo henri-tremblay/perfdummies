@@ -14,7 +14,7 @@ You will see
 * A link to the H2 console
 * How to have a look at the cache manager
 
---- Deploy the application ---
+--- Compile the application ---
 compile.bat clean|compile|compile-tests|test|package
 
 --- Deploy the application ---
