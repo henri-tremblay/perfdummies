@@ -15,6 +15,9 @@ You will see
 * How to have a look at the cache manager
 
 --- Deploy the application ---
+compile.bat clean|compile|compile-tests|test|package
+
+--- Deploy the application ---
 deploy.bat
 
 --- Launch the tomcat server ---
@@ -25,4 +28,3 @@ inject.bat
 
 --- Generate a report from a simulation result ---
 report.bat [result_name]
-
